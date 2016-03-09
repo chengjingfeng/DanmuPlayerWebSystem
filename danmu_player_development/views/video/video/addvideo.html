@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加视频</title>
+    <style>
+        .nav{margin-bottom: 50px;}
+        .content{display: block;text-align: center;margin-bottom: 20px;}
+        .content .message{margin-left: 50px;width: 200px;}
+        .content .action{margin-left: 50px;}
+    </style>
+</head>
+<body>
+    <form  name="form1" id="form1" method="post" action="/uploading " enctype='multipart/form-data'>
+        <fieldset>
+            <div class="nav">
+                <small>当前位置：视频管理->增加视频</small>
+            </div>
+            <div class="content">
+                <small>视频类别:</small>
+                <!--<input class="message" name="videoFenlei" type="text" >-->
+                <select name="videoFenlei" type="input" autofocus="true">
+                    <option value="影视">影视</option>
+                    <option value="音乐">音乐</option>
+                    <option value="动画">动画</option>
+                    <option value="番剧">番剧</option>
+                    <option value="游戏">游戏</option>
+                </select>
+            </div>
+            <div class="content">
+                <small>视频标题:</small>
+                <input class="message" name="videoName" type="text" >
+            </div>
+            <div class="content">
+                <small>视频描述:</small>
+                <input class="message" name="videodescribe" type="text" >
+            </div>
+            <div class="content">
+                <small>视频文件:</small>
+                <input id="fulAvatar" name="fulAvatar" type="file" class="form-control" />
+                <!--<button type="submit">上传添加</button>-->
+            </div>
+            <div class="content">
+                <input class="action" name="videosubmit" type="submit" value="提交">
+                <input class="action" name="videoreset" type="reset" value="重置">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

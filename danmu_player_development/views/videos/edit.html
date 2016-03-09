@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+</head>
+<script src="/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(form).action="/videosmodify/<%-video.id%>>";
+        console.log(JSON.stringify("<%=video%>"));
+        $("#upVideoFenlei").valueOf("<%= video.fenlei %>");
+        console.log("fenlei:<%= video.name %>");
+        $("#upVideoFenlei").valueOf("name:<%= video.name %>");
+    });
+
+</script>
+<body>
+<p>id= <%=id%><p>
+<p>fenlei= <%=fenlei%><p>
+<p>name= <%=name%><p>
+<h1> 修改视屏信息</h1>
+    <form method="get" action="/videosmodify/<%-id%>">
+        <fieldset>
+            <legend>视屏信息
+                <div >
+                    <label>视屏分类
+                    </label>
+                    <div >
+
+                        <select name="upVideoFenlei" autofocus="true" value="<%= fenlei%>">
+                            <option value="影视">影视</option>
+                            <option value="音乐">音乐</option>
+                            <option value="动画">动画</option>
+                            <option value="番剧">番剧</option>
+                            <option value="游戏">游戏</option>
+                        </select>
+                    </div>
+                    <label>视屏标题</label>
+                    <div >
+                        <input name="upVideoName" id="upVideoName" value="<%-name%>" />
+                    </div>
+                    <label>视屏描述</label>
+                    <div>
+                        <input name="upDescription" value="<%=name%>"/>
+                    </div>
+                </div>
+                <div >
+                    <input type="submit" value='修改'/>
+                    <button type='reset' class='btn'> <a href="/videos">取消</a></button>
+                </div>
+            </legend>
+        </fieldset>
+    </form>
+</body>
+</html>

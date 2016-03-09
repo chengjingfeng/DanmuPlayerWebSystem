@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+
+</head>
+<!--静态public中的文件引用要在后台设置静态资源服务路径-->
+
+<body>
+<h1> 视屏管理</h1>
+<div id="content">
+</div>
+<!--<button id="bt1">加载</button>-->
+<table>
+    <tr>
+        <th>
+            <tr id="addOnTail">
+                <td id="td1">分类</td><td>名字</td>
+            </tr>
+            <%docs.forEach(function(doc){
+            var fenlei=doc.fenlei;
+            var name=doc.name;
+            var address=doc.address;
+            var id=doc.id;%>
+            <tr><td><%=fenlei%></td>
+                <td><%=name%></td>
+                <td><a href="/videosdelete/<%=doc.id%>"> 删除</a></td>
+                <td><a href="/videos_edite/<%=doc.id%>"> 修改</a></td>
+                <td><a href="/go_videosplay/<%=doc.id%>"> 播放</a></td>
+            </tr>
+            <%
+            })
+            %>
+
+    <tr><td><a href="/goupload">添加新视频</a></td></tr>
+        </th>
+    </tr>
+</table>
+
+</body>
+
+</html>
